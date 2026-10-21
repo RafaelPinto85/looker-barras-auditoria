@@ -1,0 +1,117 @@
+{
+  "data": [
+    {
+      "id": "dados",
+      "label": "Dados do gráfico",
+      "elements": [
+        {
+          "id": "resumo",
+          "label": "Resumo principal (eixo)",
+          "type": "DIMENSION",
+          "options": {
+            "min": 1,
+            "max": 1,
+            "supportedTypes": [
+              "DEFAULT"
+            ]
+          }
+        },
+        {
+          "id": "pergunta",
+          "label": "Pergunta original (tooltip)",
+          "type": "DIMENSION",
+          "options": {
+            "min": 1,
+            "max": 1,
+            "supportedTypes": [
+              "DEFAULT"
+            ]
+          }
+        },
+        {
+          "id": "conforme",
+          "label": "Conforme",
+          "type": "METRIC",
+          "options": {
+            "min": 1,
+            "max": 1
+          }
+        },
+        {
+          "id": "naoConforme",
+          "label": "Não conformidade",
+          "type": "METRIC",
+          "options": {
+            "min": 1,
+            "max": 1
+          }
+        },
+        {
+          "id": "maxResultados",
+          "label": "Máximo de linhas",
+          "type": "MAX_RESULTS",
+          "options": {
+            "max": 500
+          }
+        }
+      ]
+    }
+  ],
+  "style": [
+    {
+      "id": "aparencia",
+      "label": "Aparência",
+      "elements": [
+        {
+          "id": "corConforme",
+          "label": "Cor — Conforme",
+          "type": "FILL_COLOR",
+          "defaultValue": {
+            "color": "#34A853",
+            "opacity": 1
+          }
+        },
+        {
+          "id": "corNaoConforme",
+          "label": "Cor — Não conformidade",
+          "type": "FILL_COLOR",
+          "defaultValue": {
+            "color": "#F29900",
+            "opacity": 1
+          }
+        },
+        {
+          "id": "mostrarValores",
+          "label": "Exibir valores nas barras",
+          "type": "CHECKBOX",
+          "defaultValue": true
+        },
+        {
+          "id": "mostrarLegenda",
+          "label": "Exibir legenda",
+          "type": "CHECKBOX",
+          "defaultValue": true
+        },
+        {
+          "id": "alturaLinha",
+          "label": "Altura da linha (px)",
+          "type": "INTERVAL",
+          "defaultValue": 36,
+          "options": {
+            "min": 22,
+            "max": 64
+          }
+        },
+        {
+          "id": "tamanhoFonte",
+          "label": "Tamanho da fonte",
+          "type": "FONT_SIZE",
+          "defaultValue": 12
+        }
+      ]
+    }
+  ],
+  "features": {
+    "enableComparisonDateRange": false
+  }
+}
