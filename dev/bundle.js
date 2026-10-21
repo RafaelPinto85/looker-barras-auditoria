@@ -10,9 +10,10 @@ root.innerHTML="";var table=data&&data.tables&&data.tables.DEFAULT;
 if(!table||!table.headers||!table.rows){root.innerHTML='<div class="empty">Aguardando dados do Looker Studio…</div>';return;}
 var headers=table.headers,rows=table.rows;
 function ix(id){return headers.findIndex(function(h){return h.configId===id;});}
+function cell(row,index){var v=row[index];return v&&typeof v==="object"&&Object.prototype.hasOwnProperty.call(v,"value")?v.value:v;}
 var a={resumo:ix("resumo"),pergunta:ix("pergunta"),conforme:ix("conforme"),naoConforme:ix("naoConforme")};
 if(Object.keys(a).some(function(k){return a[k]<0;})){root.innerHTML='<div class="empty">Configure os campos Resumo principal, Pergunta original, Conforme e Não conformidade.</div>';return;}
-var items=rows.map(function(r){return {label:String(r[a.resumo]==null?"(sem resumo)":r[a.resumo]),question:String(r[a.pergunta]==null?"":r[a.pergunta]),yes:Math.max(0,Number(r[a.conforme])||0),no:Math.max(0,Number(r[a.naoConforme])||0)};});
+var items=rows.map(function(r){return {label:String(cell(r,a.resumo)==null?"(sem resumo)":cell(r,a.resumo)),question:String(cell(r,a.pergunta)==null?"":cell(r,a.pergunta)),yes:Math.max(0,Number(cell(r,a.conforme))||0),no:Math.max(0,Number(cell(r,a.naoConforme))||0)};});
 var width=Math.max(280,root.clientWidth||600),height=Math.max(120,root.clientHeight||320),rowH=Math.max(22,Math.min(64,num(data,"alturaLinha",36)));
 var legend=chk(data,"mostrarLegenda",true),values=chk(data,"mostrarValores",true),fontSize=num(data,"tamanhoFonte",12);
 var top=legend?34:12,left=Math.min(240,Math.max(105,width*.34)),right=18,bottom=24,plotW=Math.max(60,width-left-right);
