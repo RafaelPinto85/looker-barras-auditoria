@@ -1,0 +1,23 @@
+{
+  "name": "Barras de Auditoria",
+  "organization": "rafaelpinto85",
+  "description": "Gráfico horizontal empilhado de conformidades e não conformidades para Looker Studio.",
+  "logoUrl": "https://rafaelpinto85.github.io/looker-barras-auditoria/logo.png",
+  "organizationUrl": "https://github.com/RafaelPinto85",
+  "supportUrl": "https://github.com/RafaelPinto85/looker-barras-auditoria/issues",
+  "devMode": true,
+  "components": [
+    {
+      "id": "barrasAuditoria",
+      "name": "Barras de Auditoria",
+      "description": "Barras empilhadas por resumo, com pergunta original no tooltip.",
+      "iconUrl": "https://rafaelpinto85.github.io/looker-barras-auditoria/icon.png",
+      "resource": {
+        "js": "https://rafaelpinto85.github.io/looker-barras-auditoria/dev/bundle.js",
+        "css": "https://rafaelpinto85.github.io/looker-barras-auditoria/dev/style.css",
+        "html": "https://rafaelpinto85.github.io/looker-barras-auditoria/dev/index.html",
+        "config": "https://rafaelpinto85.github.io/looker-barras-auditoria/dev/config.json"
+      }
+    }
+  ]
+}
